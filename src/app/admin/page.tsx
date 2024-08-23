@@ -156,8 +156,8 @@ export default function AdminPage() {
               <tbody>
                 {pinjam.length > 0 &&
                   pinjam.map((data: any,i:number) => (
-                    <form onSubmit={handleUbahPinjamBuku} action="" key={i}>
-                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+
                       <th
                         scope="row"
                         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -188,18 +188,18 @@ export default function AdminPage() {
                           name="tglKembali"
                           defaultValue={data.tglKembali}
                         />
+                        <input hidden name="id" type="text" value={data.id} />
                       </td>
-                      <input hidden name="id" type="text" value={data.id} />
+                      
                       <td className="px-6 py-4 text-right">
                         <input
-                          type="submit"
+                          type="submit" value={"Ubah"}
                           className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                         >
-                          Edit
                         </input>
                       </td>
+                    
                     </tr>
-                    </form>
                   ))}
               </tbody>
             </table>
